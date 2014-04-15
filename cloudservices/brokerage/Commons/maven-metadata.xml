@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>cloudservices.brokerage</groupId>
+  <artifactId>Commons</artifactId>
+  <versioning>
+    <versions>
+      <version>1.0-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20140415000532</lastUpdated>
+  </versioning>
+</metadata>

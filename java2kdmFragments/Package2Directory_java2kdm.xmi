@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:javaapplication="http://www.eclipse.org/MoDisco/Java/Composition/0.1.incubation/javaApplication">
+  <javaapplication:Java2Directory>
+    <javaPackage href="../Commons_java.xmi#//@ownedElements.0/@ownedPackages.0/@ownedPackages.0"/>
+    <directory href="../Commons_kdm.xmi#//@model.0/@inventoryElement.0/@inventoryElement.12/@inventoryElement.1/@inventoryElement.0/@inventoryElement.0/@inventoryElement.0/@inventoryElement.0"/>
+    <parent href="../Commons_java2kdm.xmi#/"/>
+    <java2FileChildren href="cloudservices.brokerage.commons_java2kdm.xmi#/0"/>
+    <java2FileChildren href="cloudservices.brokerage.commons_java2kdm.xmi#/1"/>
+  </javaapplication:Java2Directory>
+  <javaapplication:Java2Directory>
+    <javaPackage href="../Commons_java.xmi#//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0"/>
+    <directory href="../Commons_kdm.xmi#//@model.0/@inventoryElement.0/@inventoryElement.12/@inventoryElement.0/@inventoryElement.0/@inventoryElement.0/@inventoryElement.0/@inventoryElement.0/@inventoryElement.1/@inventoryElement.0"/>
+    <parent href="../Commons_java2kdm.xmi#/"/>
+    <java2FileChildren href="cloudservices.brokerage.commons.utils.file_utils_java2kdm.xmi#/"/>
+  </javaapplication:Java2Directory>
+  <javaapplication:Java2Directory>
+    <javaPackage href="../Commons_java.xmi#//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1"/>
+    <directory href="../Commons_kdm.xmi#//@model.0/@inventoryElement.0/@inventoryElement.12/@inventoryElement.0/@inventoryElement.0/@inventoryElement.0/@inventoryElement.0/@inventoryElement.0/@inventoryElement.1/@inventoryElement.1"/>
+    <parent href="../Commons_java2kdm.xmi#/"/>
+    <java2FileChildren href="cloudservices.brokerage.commons.utils.formatters_java2kdm.xmi#/"/>
+  </javaapplication:Java2Directory>
+  <javaapplication:Java2Directory>
+    <javaPackage href="../Commons_java.xmi#//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.2"/>
+    <directory href="../Commons_kdm.xmi#//@model.0/@inventoryElement.0/@inventoryElement.12/@inventoryElement.0/@inventoryElement.0/@inventoryElement.0/@inventoryElement.0/@inventoryElement.0/@inventoryElement.1/@inventoryElement.2"/>
+    <parent href="../Commons_java2kdm.xmi#/"/>
+    <java2FileChildren href="cloudservices.brokerage.commons.utils.logging_java2kdm.xmi#/"/>
+  </javaapplication:Java2Directory>
+  <javaapplication:Java2Directory>
+    <javaPackage href="../Commons_java.xmi#//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.3"/>
+    <directory href="../Commons_kdm.xmi#//@model.0/@inventoryElement.0/@inventoryElement.12/@inventoryElement.0/@inventoryElement.0/@inventoryElement.0/@inventoryElement.0/@inventoryElement.0/@inventoryElement.1/@inventoryElement.3"/>
+    <parent href="../Commons_java2kdm.xmi#/"/>
+    <java2FileChildren href="cloudservices.brokerage.commons.utils.properties_utils_java2kdm.xmi#/0"/>
+    <java2FileChildren href="cloudservices.brokerage.commons.utils.properties_utils_java2kdm.xmi#/1"/>
+  </javaapplication:Java2Directory>
+  <javaapplication:Java2Directory>
+    <javaPackage href="../Commons_java.xmi#//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.4"/>
+    <directory href="../Commons_kdm.xmi#//@model.0/@inventoryElement.0/@inventoryElement.12/@inventoryElement.0/@inventoryElement.0/@inventoryElement.0/@inventoryElement.0/@inventoryElement.0/@inventoryElement.1/@inventoryElement.4"/>
+    <parent href="../Commons_java2kdm.xmi#/"/>
+    <java2FileChildren href="cloudservices.brokerage.commons.utils.validators_java2kdm.xmi#/0"/>
+    <java2FileChildren href="cloudservices.brokerage.commons.utils.validators_java2kdm.xmi#/1"/>
+  </javaapplication:Java2Directory>
+</xmi:XMI>

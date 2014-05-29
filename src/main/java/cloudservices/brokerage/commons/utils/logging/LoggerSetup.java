@@ -44,6 +44,26 @@ public class LoggerSetup {
         logger.addHandler(fileHTML);
     }
     
+    public static void setup(String txtOutputAddress,String htmlOutputAddress,Level visible) throws IOException {
+
+        // Get the global logger to configure it
+        Logger logger = Logger.getLogger("");
+
+        logger.setLevel(visible);
+        fileTxt = new FileHandler(txtOutputAddress);
+        fileHTML = new FileHandler(htmlOutputAddress);
+
+        // create txt Formatter
+        formatterTxt = new SimpleFormatter();
+        fileTxt.setFormatter(formatterTxt);
+        logger.addHandler(fileTxt);
+
+        // create HTML Formatter
+        formatterHTML = new HTMLFormatter();
+        fileHTML.setFormatter(formatterHTML);
+        logger.addHandler(fileHTML);
+    }
+    
     public static void log4jSetup(String log4jPropAddress,String logFileAddress) throws IOException{
         PropertiesWriter.write(log4jPropAddress, "log4j.appender.file.File", logFileAddress);
     }

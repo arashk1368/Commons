@@ -5,6 +5,8 @@
 package cloudservices.brokerage.commons.utils.file_utils;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -25,6 +27,26 @@ public class DirectoryUtil {
             }
         } else {
             return true;
+        }
+    }
+    
+    public static List<File> getAllFiles(String directoryName){
+        List<File> files=new ArrayList<File>();
+        listf(directoryName, files);
+        return files;
+    }
+    
+    private static void listf(String directoryName, List<File> files) {
+        File directory = new File(directoryName);
+
+        // get all the files from a directory
+        File[] fList = directory.listFiles();
+        for (File file : fList) {
+            if (file.isFile()) {
+                files.add(file);
+            } else if (file.isDirectory()) {
+                listf(file.getAbsolutePath(), files);
+            }
         }
     }
 }

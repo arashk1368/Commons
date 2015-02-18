@@ -5,6 +5,8 @@
 package cloudservices.brokerage.commons.utils.validators;
 
 import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.xml.stream.XMLEventReader;
@@ -16,12 +18,33 @@ import javax.xml.stream.events.XMLEvent;
 
 /**
  *
-* @author Arash Khodadadi http://www.arashkhodadadi.com/  
+ * @author Arash Khodadadi http://www.arashkhodadadi.com/
  */
 public class WSDLValidator {
 
     private final static Logger LOGGER = Logger.getLogger(WSDLValidator.class
             .getName());
+
+    public static boolean validateWSDL(InputStream xmlInputStream) {
+        boolean valueToReturn = false;
+        XMLEventReader reader = null;
+        try {
+            XMLInputFactory inputFactory = XMLInputFactory.newInstance();
+            reader = inputFactory.createXMLEventReader(xmlInputStream);
+            valueToReturn = doParseXml(reader);
+        } catch (Exception ex) {
+            LOGGER.log(Level.SEVERE, null, ex);
+        } finally {
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (XMLStreamException ex) {
+                    LOGGER.log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+        return valueToReturn;
+    }
 
     public static boolean validateWSDL(byte[] xml) {
         boolean valueToReturn = false;
@@ -31,16 +54,14 @@ public class WSDLValidator {
             XMLInputFactory inputFactory = XMLInputFactory.newInstance();
             reader = inputFactory.createXMLEventReader(inputStream);
             valueToReturn = doParseXml(reader);
-        } catch (XMLStreamException exception) {
-            LOGGER.log(Level.SEVERE, exception.getMessage(), exception);
-        } catch (Exception exception) {
-            LOGGER.log(Level.SEVERE, exception.getMessage(), exception);
+        } catch (Exception ex) {
+            LOGGER.log(Level.SEVERE, null, ex);
         } finally {
             if (reader != null) {
                 try {
                     reader.close();
-                } catch (XMLStreamException exception) {
-                    LOGGER.log(Level.SEVERE, exception.getMessage(), exception);
+                } catch (XMLStreamException ex) {
+                    LOGGER.log(Level.SEVERE, null, ex);
                 }
             }
         }
@@ -56,16 +77,14 @@ public class WSDLValidator {
             XMLInputFactory inputFactory = XMLInputFactory.newInstance();
             reader = inputFactory.createXMLEventReader(inputStream);
             valueToReturn = doParseXml(reader);
-        } catch (XMLStreamException exception) {
-            LOGGER.log(Level.SEVERE, exception.getMessage(), exception);
-        } catch (Exception exception) {
-            LOGGER.log(Level.SEVERE, exception.getMessage(), exception);
+        } catch (Exception ex) {
+            LOGGER.log(Level.SEVERE, null, ex);
         } finally {
             if (reader != null) {
                 try {
                     reader.close();
-                } catch (XMLStreamException exception) {
-                    LOGGER.log(Level.SEVERE, exception.getMessage(), exception);
+                } catch (XMLStreamException ex) {
+                    LOGGER.log(Level.SEVERE, null, ex);
                 }
             }
         }
@@ -73,7 +92,7 @@ public class WSDLValidator {
     }
 
     private static boolean doParseXml(XMLEventReader reader)
-            throws XMLStreamException, Exception {
+            throws XMLStreamException {
         int count = 0;
         while (reader.hasNext()) {
             XMLEvent event = reader.nextEvent();

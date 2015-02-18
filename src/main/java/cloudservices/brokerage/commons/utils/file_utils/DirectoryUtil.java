@@ -19,23 +19,29 @@ public class DirectoryUtil {
 
         // if the directory does not exist, create it
         if (!theDir.exists()) {
-            try {
-                theDir.mkdir();
-                return true;
-            } catch (SecurityException se) {
-                return false;
-            }
+            return theDir.mkdir();
         } else {
             return true;
         }
     }
-    
-    public static List<File> getAllFiles(String directoryName){
-        List<File> files=new ArrayList<File>();
+
+    public static boolean createDirs(String path) {
+        File theDir = new File(path);
+
+        // if the directory does not exist, create it
+        if (!theDir.exists()) {
+            return theDir.mkdirs();
+        } else {
+            return true;
+        }
+    }
+
+    public static List<File> getAllFiles(String directoryName) {
+        List<File> files = new ArrayList<File>();
         listf(directoryName, files);
         return files;
     }
-    
+
     private static void listf(String directoryName, List<File> files) {
         File directory = new File(directoryName);
 

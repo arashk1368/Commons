@@ -4,11 +4,8 @@
  */
 package cloudservices.brokerage.commons.utils.url_utils;
 
-import cloudservices.brokerage.commons.utils.validators.WADLValidator;
-import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -29,6 +26,9 @@ public class URLRequester {
 
         //add request header
         connection.setRequestProperty("User-Agent", userAgent);
+
+        connection.setConnectTimeout(5000);
+        connection.setReadTimeout(5000);
 
         int responseCode = connection.getResponseCode();
         if (responseCode == HttpURLConnection.HTTP_OK) {

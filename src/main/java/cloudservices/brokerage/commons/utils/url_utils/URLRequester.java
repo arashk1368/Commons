@@ -34,7 +34,7 @@ public class URLRequester {
         if (responseCode == HttpURLConnection.HTTP_OK) {
             return connection.getInputStream();
         } else {
-            LOGGER.log(Level.INFO, "URL : {0} Returned ERROR Response : {1}", new Object[]{url, responseCode});
+            LOGGER.log(Level.FINE, "URL : {0} Returned ERROR Response : {1}", new Object[]{url, responseCode});
             throw new Exception("URL : {0} Returned ERROR Response : " + responseCode);
         }
     }

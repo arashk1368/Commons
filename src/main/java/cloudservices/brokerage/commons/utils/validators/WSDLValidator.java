@@ -32,7 +32,7 @@ public class WSDLValidator {
             reader = inputFactory.createXMLEventReader(xmlInputStream);
             valueToReturn = doParseXml(reader);
         } catch (Exception ex) {
-            LOGGER.log(Level.OFF, null, ex);
+            LOGGER.log(Level.FINEST, null, ex);
         } finally {
             if (reader != null) {
                 try {
@@ -54,7 +54,7 @@ public class WSDLValidator {
             reader = inputFactory.createXMLEventReader(inputStream);
             valueToReturn = doParseXml(reader);
         } catch (Exception ex) {
-            LOGGER.log(Level.OFF, null, ex);
+            LOGGER.log(Level.FINEST, null, ex);
         } finally {
             if (reader != null) {
                 try {
@@ -77,7 +77,7 @@ public class WSDLValidator {
             reader = inputFactory.createXMLEventReader(inputStream);
             valueToReturn = doParseXml(reader);
         } catch (Exception ex) {
-            LOGGER.log(Level.OFF, null, ex);
+            LOGGER.log(Level.FINEST, null, ex);
         } finally {
             if (reader != null) {
                 try {

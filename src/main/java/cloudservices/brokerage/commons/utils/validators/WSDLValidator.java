@@ -6,7 +6,6 @@ package cloudservices.brokerage.commons.utils.validators;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.xml.stream.XMLEventReader;
@@ -33,7 +32,7 @@ public class WSDLValidator {
             reader = inputFactory.createXMLEventReader(xmlInputStream);
             valueToReturn = doParseXml(reader);
         } catch (Exception ex) {
-            LOGGER.log(Level.SEVERE, null, ex);
+            LOGGER.log(Level.OFF, null, ex);
         } finally {
             if (reader != null) {
                 try {
@@ -55,7 +54,7 @@ public class WSDLValidator {
             reader = inputFactory.createXMLEventReader(inputStream);
             valueToReturn = doParseXml(reader);
         } catch (Exception ex) {
-            LOGGER.log(Level.SEVERE, null, ex);
+            LOGGER.log(Level.OFF, null, ex);
         } finally {
             if (reader != null) {
                 try {
@@ -78,7 +77,7 @@ public class WSDLValidator {
             reader = inputFactory.createXMLEventReader(inputStream);
             valueToReturn = doParseXml(reader);
         } catch (Exception ex) {
-            LOGGER.log(Level.SEVERE, null, ex);
+            LOGGER.log(Level.OFF, null, ex);
         } finally {
             if (reader != null) {
                 try {

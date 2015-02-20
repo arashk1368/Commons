@@ -32,13 +32,13 @@ public class WSDLValidator {
             reader = inputFactory.createXMLEventReader(xmlInputStream);
             valueToReturn = doParseXml(reader);
         } catch (Exception ex) {
-            LOGGER.log(Level.FINEST, null, ex);
+            LOGGER.log(Level.FINEST, ex.getMessage(), ex);
         } finally {
             if (reader != null) {
                 try {
                     reader.close();
                 } catch (XMLStreamException ex) {
-                    LOGGER.log(Level.SEVERE, null, ex);
+                    LOGGER.log(Level.SEVERE, ex.getMessage(), ex);
                 }
             }
         }
@@ -54,13 +54,13 @@ public class WSDLValidator {
             reader = inputFactory.createXMLEventReader(inputStream);
             valueToReturn = doParseXml(reader);
         } catch (Exception ex) {
-            LOGGER.log(Level.FINEST, null, ex);
+            LOGGER.log(Level.FINEST, ex.getMessage(), ex);
         } finally {
             if (reader != null) {
                 try {
                     reader.close();
                 } catch (XMLStreamException ex) {
-                    LOGGER.log(Level.SEVERE, null, ex);
+                    LOGGER.log(Level.SEVERE, ex.getMessage(), ex);
                 }
             }
         }
@@ -77,13 +77,13 @@ public class WSDLValidator {
             reader = inputFactory.createXMLEventReader(inputStream);
             valueToReturn = doParseXml(reader);
         } catch (Exception ex) {
-            LOGGER.log(Level.FINEST, null, ex);
+            LOGGER.log(Level.FINEST, ex.getMessage(), ex);
         } finally {
             if (reader != null) {
                 try {
                     reader.close();
                 } catch (XMLStreamException ex) {
-                    LOGGER.log(Level.SEVERE, null, ex);
+                    LOGGER.log(Level.SEVERE, ex.getMessage(), ex);
                 }
             }
         }

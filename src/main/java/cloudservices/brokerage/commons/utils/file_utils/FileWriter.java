@@ -9,6 +9,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 
 /**
  *
@@ -63,5 +66,9 @@ public class FileWriter {
                 outputStream.close();
             }
         }
+    }
+
+    public static void appendString(String toWrite, String path) throws IOException {
+        Files.write(Paths.get(path), toWrite.getBytes(), StandardOpenOption.CREATE, StandardOpenOption.WRITE, StandardOpenOption.APPEND);
     }
 }

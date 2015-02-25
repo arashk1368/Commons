@@ -4,8 +4,10 @@
  */
 package cloudservices.brokerage.commons.utils.file_utils;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.IOUtils;
 
 /**
@@ -16,5 +18,9 @@ public class FileChecker {
 
     public static boolean compare(InputStream is1, InputStream is2) throws IOException {
         return IOUtils.contentEquals(is1, is2);
+    }
+
+    public static String getExtension(String filePath) {
+        return FilenameUtils.getExtension(filePath);
     }
 }

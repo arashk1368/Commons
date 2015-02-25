@@ -55,4 +55,26 @@ public class DirectoryUtil {
             }
         }
     }
+
+    public static List<File> getAllFiles(String directoryName, String extension) {
+        List<File> files = new ArrayList<File>();
+        listf(directoryName, files, extension);
+        return files;
+    }
+
+    private static void listf(String directoryName, List<File> files, String extension) {
+        File directory = new File(directoryName);
+
+        // get all the files from a directory
+        File[] fList = directory.listFiles();
+        for (File file : fList) {
+            if (file.isFile()) {
+                if (FileChecker.getExtension(file.getPath()).compareTo(extension) == 0) {
+                    files.add(file);
+                }
+            } else if (file.isDirectory()) {
+                listf(file.getAbsolutePath(), files, extension);
+            }
+        }
+    }
 }

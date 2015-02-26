@@ -4,6 +4,7 @@
  */
 package cloudservices.brokerage.commons.utils.validators;
 
+import java.io.File;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.logging.Level;
@@ -30,6 +31,20 @@ public class WADLValidator {
             URL schemaFile = new URL(xsdPath);
             SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
             Schema schema = factory.newSchema(schemaFile);
+            Validator validator = schema.newValidator();
+            validator.validate(new StreamSource(stream));
+        } catch (Exception ex) {
+            LOGGER.log(Level.FINEST, ex.getMessage(), ex);
+            return false;
+        }
+        return true;
+    }
+
+    public static boolean validateXMLSchema(InputStream stream, File wadlSchema) throws Exception {
+
+        try {
+            SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+            Schema schema = factory.newSchema(wadlSchema);
             Validator validator = schema.newValidator();
             validator.validate(new StreamSource(stream));
         } catch (Exception ex) {
